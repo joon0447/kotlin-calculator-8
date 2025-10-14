@@ -1,8 +1,10 @@
 package calculator.controller
 
 import calculator.model.Delimiter
+import calculator.model.StringCalculator
 import calculator.model.StringParser
 import calculator.view.InputView
+import calculator.view.OutputView
 
 class Calculator(
     private val inputView: InputView = InputView()
@@ -17,6 +19,10 @@ class Calculator(
         val parser = StringParser(delimiter)
         val numbers = parser.extractNumbers(input)
 
-        println(numbers)
+        val sc = StringCalculator()
+        val total =  sc.addNumbers(numbers)
+
+        val output = OutputView()
+        output.printOutput(total)
     }
 }
