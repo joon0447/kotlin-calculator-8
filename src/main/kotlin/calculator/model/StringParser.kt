@@ -13,6 +13,14 @@ class StringParser(val delimiter: Delimiter) {
                 }
             }
         }
+
+        if (result.startsWith("//")) {
+            val endIndex = result.indexOf("\\n")
+            if (endIndex != -1) {
+                result = result.substring(endIndex + 2)
+            }
+        }
+
         return result
     }
 }

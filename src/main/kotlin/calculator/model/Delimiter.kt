@@ -11,11 +11,11 @@ class Delimiter {
             }
             addCustomDelimiter(input.substring(2, start))
         }
+
     }
 
     fun addCustomDelimiter(input: String) {
         delimiter += input
-        println(getDelimiter())
     }
 
     fun getDelimiter() : String {

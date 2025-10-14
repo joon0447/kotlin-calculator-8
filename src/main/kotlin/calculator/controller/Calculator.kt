@@ -1,5 +1,7 @@
 package calculator.controller
 
+import calculator.model.Delimiter
+import calculator.model.StringParser
 import calculator.view.InputView
 
 class Calculator(
@@ -8,6 +10,13 @@ class Calculator(
 
     fun run() {
         val input = inputView.readInput()
-        println(input)
+
+        val delimiter = Delimiter()
+        delimiter.parseCustomDelimiter(input)
+
+        val parser = StringParser(delimiter)
+        val numbers = parser.extractNumbers(input)
+
+        println(numbers)
     }
 }
