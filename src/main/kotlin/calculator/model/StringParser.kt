@@ -27,6 +27,6 @@ class StringParser(val delimiter: Delimiter) {
     }
 
     fun isNumber(input: String) : Boolean {
-        return input.matches(Regex("[0-9]+$"))
+        return input.matches(Regex("[0-9]*$"))
     }
 }
