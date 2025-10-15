@@ -18,6 +18,16 @@ class Delimiter {
         delimiter += input
     }
 
+    fun isValidCustomDelimiterFormat(input: String): Boolean {
+        if(input.startsWith("//")){
+            val endIndex = input.indexOf("\n")
+            if(endIndex == -1 || endIndex <= 2) return false
+        }else{
+            if(input.contains("\n")) return false
+        }
+        return true
+    }
+
     fun getDelimiter() : String {
         return delimiter
     }
