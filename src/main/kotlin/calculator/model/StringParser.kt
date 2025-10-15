@@ -21,6 +21,12 @@ class StringParser(val delimiter: Delimiter) {
             }
         }
 
+        if(!isNumber(result)) throw IllegalArgumentException("문자가 포함되어 있습니다.")
+
         return result
+    }
+
+    fun isNumber(input: String) : Boolean {
+        return input.matches(Regex("[0-9]+$"))
     }
 }
