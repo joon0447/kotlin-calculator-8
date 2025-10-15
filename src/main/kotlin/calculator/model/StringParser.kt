@@ -24,7 +24,7 @@ class StringParser(val delimiter: Delimiter) {
                 }
             }
             if(isDelimiter){
-                list.add(str)
+                if(str.isNotEmpty()) list.add(str)
                 str = ""
             }else{
                 str += char
@@ -32,7 +32,6 @@ class StringParser(val delimiter: Delimiter) {
         }
 
         if(str.isNotEmpty()) list.add(str)
-
         if(!isNumber(list)) throw IllegalArgumentException("문자가 포함되어 있습니다.")
         return list
     }
