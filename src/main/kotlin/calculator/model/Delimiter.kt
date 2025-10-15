@@ -4,7 +4,7 @@ class Delimiter {
     private var delimiter = ",:"
 
     fun parseCustomDelimiter(input: String) {
-        if(input.substring(0, 2) == "//"){
+        if(input.startsWith("//")){
             var start = 2
             while(input.substring(start, start+2) != "\\n"){
                 start++
