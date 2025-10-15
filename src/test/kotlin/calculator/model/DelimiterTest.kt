@@ -42,7 +42,7 @@ class DelimiterTest {
         val delimiter = Delimiter()
         assertEquals(false, delimiter.isValidCustomDelimiterFormat("//;12312312"))
         assertEquals(false, delimiter.isValidCustomDelimiterFormat(";\n12312312"))
-        assertEquals(true, delimiter.isValidCustomDelimiterFormat("//;\\n1;2;3"))
+        assertEquals(true, delimiter.isValidCustomDelimiterFormat("//;\n1;2;3"))
     }
 
 }
