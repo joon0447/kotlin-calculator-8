@@ -11,4 +11,11 @@ class StringParserTest {
         val sp = StringParser(delimiter)
         assertEquals("123", sp.extractNumbers("1,2:3"))
     }
+
+    @Test
+    fun `문자열이 숫자인지 확인하기` () {
+        val delimiter = Delimiter()
+        val sp = StringParser(delimiter)
+        assertEquals(false, sp.isNumber("123sadf"))
+    }
 }
