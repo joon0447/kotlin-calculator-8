@@ -8,8 +8,8 @@ class StringCalculatorTest {
     @Test
     fun addNumbersTest() {
         val calculator = StringCalculator()
-        val num = calculator.addNumbers("123")
-        assertEquals(6, num)
+        val num = calculator.addNumbers(listOf("1", "105"))
+        assertEquals(106, num)
     }
 
 
