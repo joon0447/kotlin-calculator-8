@@ -9,8 +9,6 @@ class StringCalculatorTest {
     fun addNumbersTest() {
         val calculator = StringCalculator()
         val num = calculator.addNumbers(listOf("1", "105"))
-        assertEquals(106, num)
+        assertEquals(106.toBigInteger(), num)
     }
-
-
 }
