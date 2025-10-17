@@ -1,6 +1,5 @@
 package calculator.view
 
-import calculator.model.Delimiter
 import camp.nextstep.edu.missionutils.Console
 
 class InputView {
