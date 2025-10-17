@@ -97,6 +97,13 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `커스텀 구분자 없이 등록할 때` () {
+        assertSimpleTest {
+            assertThrows<IllegalArgumentException> { runException("//\\n1") }
+        }
+    }
+
 
 
 
