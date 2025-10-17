@@ -41,8 +41,8 @@ class DelimiterTest {
     fun `커스텀 구분자 형식 확인` () {
         val delimiter = Delimiter()
         assertEquals(false, delimiter.isValidCustomDelimiterFormat("//;12312312"))
-        assertEquals(false, delimiter.isValidCustomDelimiterFormat(";\n12312312"))
-        assertEquals(true, delimiter.isValidCustomDelimiterFormat("//;\n1;2;3"))
+        assertEquals(false, delimiter.isValidCustomDelimiterFormat(";\\n12312312"))
+        assertEquals(true, delimiter.isValidCustomDelimiterFormat("//;\\n1;2;3"))
     }
 
 }
