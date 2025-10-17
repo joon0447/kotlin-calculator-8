@@ -4,9 +4,9 @@ class Delimiter {
     private var delimiter = ",:"
 
     fun parseCustomDelimiter(input: String) {
-        if(input.startsWith("//")){
+        if(input.startsWith("//")) {
             var start = 2
-            while(input.substring(start, start+2) != "\\n"){
+            while(input.substring(start, start+2) != "\\n") {
                 start++
             }
             addCustomDelimiter(input.substring(2, start))
@@ -19,10 +19,11 @@ class Delimiter {
     }
 
     fun isValidCustomDelimiterFormat(input: String): Boolean {
-        if(input.startsWith("//")){
+        if(input.startsWith("//")) {
             val endIndex = input.indexOf("\\n")
             if(endIndex == -1 || endIndex <= 2) return false
-        }else{
+        }
+        else {
             if(input.contains("\\n")) return false
         }
         return true

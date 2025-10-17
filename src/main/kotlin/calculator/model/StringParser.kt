@@ -15,18 +15,19 @@ class StringParser(val delimiter: Delimiter) {
             }
         }
 
-        for(char in result){
+        for(char in result) {
             var isDelimiter = false
-            for(delimiter in delimiters){
-                if(delimiter == char){
+            for(delimiter in delimiters) {
+                if(delimiter == char) {
                     isDelimiter = true
                     break
                 }
             }
-            if(isDelimiter){
+            if(isDelimiter) {
                 if(str.isNotEmpty()) list.add(str)
                 str = ""
-            }else{
+            }
+            else {
                 str += char
             }
         }
@@ -37,7 +38,7 @@ class StringParser(val delimiter: Delimiter) {
     }
 
     fun isNumber(input: List<String>) : Boolean {
-        for(str in input){
+        for(str in input) {
             if(!str.matches(Regex("[0-9]+"))) return false
         }
         return true
