@@ -15,16 +15,16 @@ class StringParser(val delimiter: Delimiter) {
             }
         }
 
-        for(char in result) {
+        for (char in result) {
             var isDelimiter = false
-            for(delimiter in delimiters) {
-                if(delimiter == char) {
+            for (delimiter in delimiters) {
+                if (delimiter == char) {
                     isDelimiter = true
                     break
                 }
             }
-            if(isDelimiter) {
-                if(str.isNotEmpty()) list.add(str)
+            if (isDelimiter) {
+                if (str.isNotEmpty()) list.add(str)
                 str = ""
             }
             else {
@@ -32,14 +32,14 @@ class StringParser(val delimiter: Delimiter) {
             }
         }
 
-        if(str.isNotEmpty()) list.add(str)
-        if(!isNumber(list)) throw IllegalArgumentException("문자가 포함되어 있습니다.")
+        if (str.isNotEmpty()) list.add(str)
+        if (!isNumber(list)) throw IllegalArgumentException("문자가 포함되어 있습니다.")
         return list
     }
 
-    fun isNumber(input: List<String>) : Boolean {
-        for(str in input) {
-            if(!str.matches(Regex("[0-9]+"))) return false
+    fun isNumber(input: List<String>): Boolean {
+        for (str in input) {
+            if (!str.matches(Regex("[0-9]+"))) return false
         }
         return true
     }

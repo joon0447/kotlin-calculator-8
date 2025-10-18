@@ -13,7 +13,7 @@ class Calculator(
     fun run() {
         val input = inputView.readInput()
         val delimiter = Delimiter()
-        if(!delimiter.isValidCustomDelimiterFormat(input)) throw IllegalArgumentException("커스텀 구분자가 정상적으로 입력되지 않았습니다.")
+        if (!delimiter.isValidCustomDelimiterFormat(input)) throw IllegalArgumentException("커스텀 구분자가 정상적으로 입력되지 않았습니다.")
         delimiter.parseCustomDelimiter(input)
 
         val parser = StringParser(delimiter)

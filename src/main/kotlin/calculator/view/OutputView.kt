@@ -4,7 +4,7 @@ import java.math.BigInteger
 
 class OutputView {
 
-    fun printOutput(result : BigInteger) {
+    fun printOutput(result: BigInteger) {
         println("결과 : $result")
     }
 }
