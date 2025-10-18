@@ -104,6 +104,14 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `구분자 띄어쓰기` () {
+        assertSimpleTest {
+            run("// \\n1 1")
+            assertThat(output()).contains("결과 : 2")
+        }
+    }
+
 
 
 
