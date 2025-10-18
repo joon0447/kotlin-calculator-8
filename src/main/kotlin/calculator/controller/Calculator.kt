@@ -20,7 +20,7 @@ class Calculator(
         val numbers = parser.extractNumbers(input)
 
         val sc = StringCalculator()
-        val total =  sc.addNumbers(numbers)
+        val total = sc.addNumbers(numbers)
 
         val output = OutputView()
         output.printOutput(total)
