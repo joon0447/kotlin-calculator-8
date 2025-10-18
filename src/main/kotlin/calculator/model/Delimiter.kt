@@ -19,12 +19,12 @@ class Delimiter {
     }
 
     fun isValidCustomDelimiterFormat(input: String): Boolean {
+        val endIndex = input.indexOf("\\n")
         if (input.startsWith("//")) {
-            val endIndex = input.indexOf("\\n")
             if (endIndex == -1 || endIndex <= 2) return false
         }
         else {
-            if (input.contains("\\n")) return false
+            if (endIndex != -1) return false
         }
         return true
     }
