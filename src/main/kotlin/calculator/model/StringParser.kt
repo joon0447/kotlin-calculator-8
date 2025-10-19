@@ -26,8 +26,7 @@ class StringParser(val delimiter: Delimiter) {
             if (isDelimiter) {
                 if (str.isNotEmpty()) list.add(str)
                 str = ""
-            }
-            else {
+            } else {
                 str += char
             }
         }

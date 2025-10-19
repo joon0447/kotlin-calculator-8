@@ -22,8 +22,7 @@ class Delimiter {
         val endIndex = input.indexOf("\\n")
         if (input.startsWith("//")) {
             if (endIndex == -1 || endIndex <= 2) return false
-        }
-        else {
+        } else {
             if (endIndex != -1) return false
         }
         return true
