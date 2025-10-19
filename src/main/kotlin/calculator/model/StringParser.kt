@@ -38,8 +38,15 @@ class StringParser(val delimiter: Delimiter) {
     }
 
     fun isNumber(input: List<String>): Boolean {
+        var regex: String
+        if (delimiter.getDelimiter().contains(".")) {
+            regex = "[0-9]+"
+        } else {
+            regex = "[0-9.]+"
+        }
+
         for (str in input) {
-            if (!str.matches(Regex("[0-9]+"))) return false
+            if (!str.matches(Regex(regex))) return false
         }
         return true
     }
