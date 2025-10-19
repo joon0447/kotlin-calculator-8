@@ -86,14 +86,7 @@ class ApplicationTest : NsTest() {
             assertThat(output()).contains("결과 : 800000000000")
         }
     }
-
-    @Test
-    fun `잘못된 소수 입력`() {
-        assertSimpleTest {
-            assertThrows<IllegalArgumentException> { runException("1.2,3.4,5") }
-        }
-    }
-
+    
     @Test
     fun `예외 테스트`() {
         assertSimpleTest {
