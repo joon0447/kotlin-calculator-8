@@ -1,13 +1,13 @@
 package calculator.model
 
-import java.math.BigInteger
+import java.math.BigDecimal
 
 class StringCalculator {
 
-    fun addNumbers(input : List<String>): BigInteger {
-        var total = BigInteger.ZERO
+    fun addNumbers(input : List<String>): BigDecimal {
+        var total = BigDecimal.ZERO
         for (num in input) {
-            total = total.add(num.toBigInteger())
+            total = total.add(num.toBigDecimal())
         }
         return total
     }
