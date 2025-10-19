@@ -24,6 +24,14 @@ class ApplicationTest : NsTest() {
     }
 
     @Test
+    fun `커스텀 구분자 사용3`() {
+        assertSimpleTest {
+            run("//.\\n10.5.1")
+            assertThat(output()).contains("결과 : 16")
+        }
+    }
+
+    @Test
     fun `커스텀 구분자 미사용1`() {
         assertSimpleTest {
             run("10,20,30")
@@ -109,6 +117,22 @@ class ApplicationTest : NsTest() {
         assertSimpleTest {
             run("// \\n1 1")
             assertThat(output()).contains("결과 : 2")
+        }
+    }
+
+    @Test
+    fun `소수의 덧셈` () {
+        assertSimpleTest {
+            run("1.5:2.5")
+            assertThat(output()).contains("결과 : 4")
+        }
+    }
+
+    @Test
+    fun `int 범위를 초과하는 소수의 덧셈` () {
+        assertSimpleTest {
+            run("//?\\n100000000000.5?0.1")
+            assertThat(output()).contains("결과 : 100000000000.6")
         }
     }
 
