@@ -1,10 +1,10 @@
 package calculator.view
 
-import java.math.BigInteger
+import java.math.BigDecimal
 
 class OutputView {
 
-    fun printOutput(result: BigInteger) {
+    fun printOutput(result: BigDecimal) {
         println("결과 : $result")
     }
 }
