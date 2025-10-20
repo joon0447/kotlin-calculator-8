@@ -7,24 +7,22 @@ import calculator.view.InputView
 import calculator.view.OutputView
 
 class Calculator(
-    private val inputView: InputView = InputView()
+    private val inputView: InputView = InputView(),
+    private val delimiter: Delimiter = Delimiter(),
+    private val parser : StringParser = StringParser(delimiter),
+    private val sc : StringCalculator = StringCalculator(),
+    private val outputView : OutputView = OutputView(),
 ) {
 
     fun run() {
         val input = inputView.readInput()
-        val delimiter = Delimiter()
         if (!delimiter.isValidCustomDelimiterFormat(input)) {
             throw IllegalArgumentException("커스텀 구분자가 정상적으로 입력되지 않았습니다.")
         }
         delimiter.parseCustomDelimiter(input)
-
-        val parser = StringParser(delimiter)
         val numbers = parser.extractNumbers(input)
-
-        val sc = StringCalculator()
         val total = sc.addNumbers(numbers)
 
-        val output = OutputView()
-        output.printOutput(total)
+        outputView.printOutput(total)
     }
 }
